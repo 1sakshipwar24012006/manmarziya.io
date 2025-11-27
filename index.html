@@ -17,238 +17,313 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f7f7; /* Light gray background */
+            /* Light gray background with a soft, paper-like texture */
+            background-color: #fefefe; 
+            color: #1f2937; /* Dark text for high contrast */
         }
-        /* Custom gradient for hero CTA */
+        
+        /* Custom gradient for CTA (Vibrant Gold/Amber) */
         .cta-gradient {
-            background-image: linear-gradient(to right, #eab308, #f59e0b, #fbbf24);
+            /* Richer, warmer gold for a fantasy touch */
+            background-image: linear-gradient(135deg, #FFC72C, #EAA600, #B8860B);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Springy transition */
         }
-        /* Style for the product images */
+        .cta-gradient:hover {
+            box-shadow: 0 15px 30px -5px rgba(255, 199, 44, 0.6);
+            transform: scale(1.05);
+        }
+        
+        /* Artistic Background Gradients for Sections (Fantasy Look) */
+        .hero-section {
+            /* Soft, flowing watercolor gradient */
+            background: linear-gradient(180deg, #ffffff 0%, #fff7ed 50%, #fefcf3 100%);
+        }
+        .order-section {
+            /* Deep Rose/Amber tint for the final conversion section */
+            background: linear-gradient(90deg, #fef2f2 0%, #ffece9 100%);
+        }
+
+        /* Style for the product images in the Featured Collections */
         .product-img {
             width: 100%;
-            height: 250px; /* Fixed height for consistency */
+            height: 250px; 
             object-fit: cover;
-            border-radius: 0.75rem; /* Rounded corners */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem; 
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
         }
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Even larger rounded corners */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden; /* For border glow effect */
+            border: 1px solid #f0f0f0;
+        }
+        .product-card:hover {
+            box-shadow: 0 15px 40px rgba(230, 162, 0, 0.3), 0 0 15px rgba(230, 162, 0, 0.2);
+            transform: translateY(-8px);
+        }
+        
+        /* Feature Highlight Bar Color */
+        .feature-bar {
+            background-color: #ffedc7; /* Vibrant Amber highlight bar */
+        }
+
+        /* Header Color for Luxury */
+        .header-bg {
+             background-color: #8b0000; /* Deep Burgundy/Rose for high contrast luxury */
+        }
+        .header-text {
+            color: #FFC72C; /* Gold text */
+        }
+        .header-nav a:hover {
+            color: #fefefe; /* White hover effect */
+        }
+        
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-md sticky top-0 z-10">
+    <!-- Header & Navigation - Deep Burgundy/Rose Theme -->
+    <header class="header-bg shadow-xl sticky top-0 z-10 border-b-4 border-yellow-500">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <!-- Logo -->
-            <div class="text-2xl font-bold text-yellow-600 tracking-wider">
+            <div class="text-3xl font-bold header-text tracking-wider">
                 <a href="#">Manmarziya</a>
             </div>
             <!-- Navigation -->
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <!-- Added Home link pointing to the top of the page -->
-                <a href="#" class="hover:text-yellow-600 transition duration-300 font-semibold">Home</a>
-                <a href="#products" class="hover:text-yellow-600 transition duration-300">Products</a>
-                <a href="#whyus" class="hover:text-yellow-600 transition duration-300">Why Us</a>
-                <a href="#order" class="hover:text-yellow-600 transition duration-300">Place Order</a>
+            <nav class="hidden md:flex space-x-8 text-base font-semibold header-nav">
+                <a href="#" class="header-text hover:text-white transition duration-300">Home</a>
+                <a href="#products" class="header-text hover:text-white transition duration-300">Products</a>
+                <a href="#whyus" class="header-text hover:text-white transition duration-300">Why Us</a>
+                <a href="#order" class="header-text hover:text-white transition duration-300">Place Order</a>
             </nav>
             <!-- Mobile Menu Placeholder -->
-            <button class="md:hidden text-gray-600 hover:text-yellow-600 transition duration-300">
+            <button class="md:hidden header-text hover:text-white transition duration-300">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </header>
 
     <main>
-        <!-- 1. Hero Section (Anchor for Home) -->
-        <section class="bg-white py-16 md:py-24 text-center border-b border-gray-200">
+        <!-- 1. Hero Section (Anchor for Home) - Artistic Gradient Background -->
+        <section class="hero-section py-24 md:py-40 text-center border-b border-gray-200">
             <div class="container mx-auto px-6">
-                <p class="text-lg text-gray-500 mb-2">Welcome to the world of unique craftsmanship</p>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
-                    Handmade Gifts That Tell <span class="text-yellow-600">Your Story.</span>
+                <!-- Large, Dramatic Headline -->
+                <h1 class="text-7xl md:text-9xl font-extrabold text-gray-900 mb-6 leading-none tracking-tighter">
+                    Gifts That Tell 
+                    <span class="text-rose-700 block md:inline-block mt-3">Your Story.</span>
                 </h1>
-                <p class="text-xl max-w-3xl mx-auto mb-8 text-gray-600">
-                    Manmarziya offers premium, fully-customizable resin & string-art gifts, transforming your precious memories into tangible keepsakes.
+                
+                <!-- Subtext for Emotional Value -->
+                <p class="text-3xl max-w-4xl mx-auto mb-12 text-gray-700 font-light italic">
+                    Where personalization meets art and memories become permanent treasures.
                 </p>
-                <a href="#order" class="inline-block cta-gradient text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
-                    Start Your Custom Order Now
+                
+                <!-- Primary CTA -->
+                <a href="#order" class="inline-block cta-gradient text-gray-900 font-extrabold py-5 px-16 rounded-full shadow-2xl transition duration-300 text-xl uppercase tracking-widest">
+                    Design Your Custom Art Piece
                 </a>
-                <p class="mt-4 text-sm text-gray-500">
-                    Crafted with passion by **Samiksha, Ragini, and Sakshi**.
-                </p>
+                
             </div>
         </section>
 
-        <!-- 2. Problem & Solution -->
-        <section class="py-16 md:py-20 bg-gray-100">
+        <!-- Feature Highlight Bar (Under Hero) - Rich Amber Background -->
+        <div class="feature-bar py-8 shadow-inner border-y border-yellow-800/10">
+            <div class="container mx-auto px-6 flex flex-wrap justify-center items-center text-center">
+                <div class="w-full md:w-1/3 p-2">
+                    <p class="text-rose-700 font-extrabold flex items-center justify-center text-lg">
+                        <svg class="w-6 h-6 mr-2 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.24l-3.297-3.298a1 1 0 00-1.414 0L9 8m0 0l-4 4m4-4l-4 4"></path></svg>
+                        Unique & Hand-Poured Art
+                    </p>
+                </div>
+                <div class="w-full md:w-1/3 p-2">
+                    <p class="text-rose-700 font-extrabold flex items-center justify-center text-lg">
+                        <svg class="w-6 h-6 mr-2 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4m-4-4h.01"></path></svg>
+                        Personalized to Your Vision
+                    </p>
+                </div>
+                <div class="w-full md:w-1/3 p-2">
+                    <p class="text-rose-700 font-extrabold flex items-center justify-center text-lg">
+                        <svg class="w-6 h-6 mr-2 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v5m0 0l-1-1m1 1l1-1"></path></svg>
+                        Affordable Artisan Luxury
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Problem & Solution - Clean Cards with contrast -->
+        <section class="py-20 md:py-32 bg-white border-b border-gray-100">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12">
                     <!-- Problem -->
-                    <div class="p-6 bg-white rounded-xl shadow-lg">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4 flex items-center">
-                            <svg class="w-8 h-8 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            The Problem with Gifting
+                    <div class="p-10 bg-gray-50 rounded-3xl shadow-xl border-l-8 border-rose-500 product-card">
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-4 flex items-center">
+                            <svg class="w-8 h-8 text-rose-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            The Gifting Dilemma
                         </h2>
-                        <ul class="list-disc list-inside space-y-3 text-gray-600 ml-4">
-                            <li>Difficulty finding truly personal, meaningful gifts.</li>
+                        <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4 text-lg">
+                            <li>Struggle to find truly personal, meaningful gifts.</li>
                             <li>Market saturation with generic, low-quality, mass-produced items.</li>
-                            <li>Customization is often rare, slow, or prohibitively expensive.</li>
-                            <li>Key life events demand unique, memorable keepsakes that are hard to source.</li>
+                            <li>Customization is slow, complex, or too expensive for the average buyer.</li>
+                            <li>Demand for unique keepsakes for life events (Weddings, Festivals).</li>
                         </ul>
                     </div>
 
                     <!-- Solution -->
-                    <div class="p-6 bg-yellow-50 rounded-xl shadow-lg">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4 flex items-center">
-                            <svg class="w-8 h-8 text-yellow-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v13m-7 4h14a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            The Manmarziya Solution
+                    <div class="p-10 bg-yellow-50 rounded-3xl shadow-xl border-l-8 border-yellow-700 product-card">
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-4 flex items-center">
+                            <svg class="w-8 h-8 text-yellow-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v13m-7 4h14a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            The Manmarziya Answer
                         </h2>
-                        <p class="text-gray-700 mb-4">
-                            Premium handcrafted products, **100% customizable** to your exact needs.
+                        <p class="text-gray-800 mb-4 font-semibold text-lg">
+                            Premium handcrafted products, **100% customizable** to reflect your exact desires.
                         </p>
-                        <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
-                            <li>Personalized names, photos, colors, embedded elements, and initials.</li>
-                            <li>Crafted using high-grade, long-lasting resin & precision string-art.</li>
-                            <li>Perfect for Weddings, Anniversaries, Corporate Events, and Home Décor.</li>
-                            <li>Affordable luxury pricing with faster turnaround times.</li>
+                        <ul class="list-disc list-inside space-y-3 text-gray-800 ml-4 text-lg">
+                            <li>Personalized names, photos, colors, and embedded elements.</li>
+                            <li>Durable, long-lasting, non-yellowing resin quality.</li>
+                            <li>Perfect for every occasion: Weddings, corporate, and home decor.</li>
+                            <li>Luxury designs at an affordable price point.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Product Portfolio -->
-        <section id="products" class="py-16 md:py-20 bg-white border-b border-gray-200">
+        <!-- 3. Product Portfolio - Featuring the core three products -->
+        <section id="products" class="py-20 md:py-32 bg-gray-100 border-b border-gray-200 product-section">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-12">Our Featured Collections</h2>
+                <h2 class="text-5xl font-extrabold text-gray-900 mb-16">Our Featured Art Pieces</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-                    <!-- Product Card 1: Ring Platter (Signature) - Image: WhatsApp Image 2025-10-29 at 11.40.44.jpeg -->
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-4 border-yellow-600">
-                        <img src="WhatsApp Image 2025-10-29 at 11.40.44.jpeg" alt="Custom Resin Ring Platter for Wedding" class="product-img mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Signature Ring Platter</h3>
+                    <!-- Product Card 1: Ring Platter (Signature) -->
+                    <div class="product-card p-6 hover:shadow-rose-600/30 border-4 border-rose-300">
+                        <img src="uploaded:WhatsApp Image 2025-10-29 at 11.40.44.jpeg-60bec6c2-358d-4b88-ba0e-b9c8b57d61cb" alt="Custom Resin Ring Platter for Wedding" class="product-img mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Signature Ring Platter</h3>
                         <p class="text-gray-600 mb-4">The ultimate bridal keepsake. Fully customized with names, dates, and stunning florals.</p>
-                        <p class="text-3xl font-extrabold text-yellow-600">₹2,500</p>
-                        <p class="text-sm text-green-600 mt-1">High-Value Premium Product</p>
+                        <p class="text-4xl font-extrabold text-rose-700">₹2,500</p>
+                        <p class="text-sm text-green-700 mt-1 font-semibold">High-Value Premium Product</p>
                     </div>
 
-                    <!-- Product Card 2: Custom Sign/Photoframe - Image: WhatsApp Image 2025-10-29 at 11.40.45.jpeg (Used for frames) -->
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <img src="WhatsApp Image 2025-10-29 at 11.40.47.jpeg" alt="Custom Resin Name Sign with Dried Flowers" class="product-img mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Resin Name Signs & Frames</h3>
+                    <!-- Product Card 2: Custom Sign/Photoframe -->
+                    <div class="product-card p-6 hover:shadow-rose-600/30 border-4 border-rose-300">
+                        <img src="uploaded:WhatsApp Image 2025-10-29 at 11.40.45.jpeg-25654086-7e79-4511-9261-b519a6c0de5f" alt="Custom Resin Name Sign with Dried Flowers" class="product-img mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom Resin Name Signs & Frames</h3>
                         <p class="text-gray-600 mb-4">Embed favorite photos, flowers, and messages in beautiful, long-lasting resin frames.</p>
-                        <p class="text-3xl font-extrabold text-yellow-600">Starting ₹499</p>
-                        <p class="text-sm text-green-600 mt-1">Excellent Gift Value</p>
+                        <p class="text-4xl font-extrabold text-rose-700">Starting ₹499</p>
+                        <p class="text-sm text-green-700 mt-1 font-semibold">Excellent Gift Value</p>
                     </div>
 
-                    <!-- Product Card 3: Keychains (High Volume) - Image: WhatsApp Image 2025-10-29 at 11.40.48.jpeg -->
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                        <img src="WhatsApp Image 2025-10-29 at 11.40.48.jpeg" alt="Personalized Resin Initial Keychains" class="product-img mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Resin Keychains & Accessories</h3>
+                    <!-- Product Card 3: Keychains (High Volume) -->
+                    <div class="product-card p-6 hover:shadow-rose-600/30 border-4 border-rose-300">
+                        <img src="uploaded:WhatsApp Image 2025-10-29 at 11.40.48.jpeg-610475a8-9114-4887-8770-d0f6c7020bdd" alt="Personalized Resin Initial Keychains" class="product-img mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Resin Keychains & Accessories</h3>
                         <p class="text-gray-600 mb-4">Affordable, quick-turnaround accessories. Perfect for party favors and students.</p>
-                        <p class="text-3xl font-extrabold text-yellow-600">Starting ₹149</p>
-                        <p class="text-sm text-green-600 mt-1">High Volume, High Margin Product</p>
+                        <p class="text-4xl font-extrabold text-rose-700">Starting ₹149</p>
+                        <p class="text-sm text-green-700 mt-1 font-semibold">High Volume, High Margin Product</p>
                     </div>
                 </div>
                 
-                <p class="text-center text-gray-500 mt-8">
-                    *The Ganesha/Diwali platter is available seasonally. Inquire about current offerings!
-                </p>
-
-                <a href="#order" class="inline-block mt-12 bg-gray-900 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:bg-gray-700 transition duration-300">
+                <a href="#order" class="inline-block mt-16 bg-rose-700 text-white font-extrabold py-5 px-16 rounded-full shadow-lg hover:bg-rose-800 transition duration-300 uppercase tracking-widest text-xl">
                     Order Your Custom Gift Today
                 </a>
             </div>
         </section>
 
-        <!-- 4. Competitive Advantage (Why Us) -->
-        <section id="whyus" class="py-16 md:py-20 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Our Unbeatable Edge</h2>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-
-                    <!-- Advantage 1 -->
-                    <div class="text-center p-6 bg-white rounded-xl shadow-lg">
-                        <p class="text-3xl text-yellow-600 mb-3 font-semibold">1.</p>
-                        <h4 class="font-bold mb-2">Uniqueness Guaranteed</h4>
-                        <p class="text-sm text-gray-600">Every product is a one-of-a-kind, hand-made masterpiece.</p>
-                    </div>
-
-                    <!-- Advantage 2 -->
-                    <div class="text-center p-6 bg-white rounded-xl shadow-lg">
-                        <p class="text-3xl text-yellow-600 mb-3 font-semibold">2.</p>
-                        <h4 class="font-bold mb-2">Deep Personalization</h4>
-                        <p class="text-sm text-gray-600">Extensive options for names, photos, colors, and embedded charms.</p>
-                    </div>
-
-                    <!-- Advantage 3 -->
-                    <div class="text-center p-6 bg-white rounded-xl shadow-lg">
-                        <p class="text-3xl text-yellow-600 mb-3 font-semibold">3.</p>
-                        <h4 class="font-bold mb-2">Premium Quality Resin</h4>
-                        <p class="text-sm text-gray-600">High-grade, long-lasting, and non-yellowing materials for durability.</p>
-                    </div>
-
-                    <!-- Advantage 4 -->
-                    <div class="text-center p-6 bg-white rounded-xl shadow-lg">
-                        <p class="text-3xl text-yellow-600 mb-3 font-semibold">4.</p>
-                        <h4 class="font-bold mb-2">Affordable Luxury</h4>
-                        <p class="text-sm text-gray-600">Competitive pricing combined with fast fulfillment and delivery.</p>
-                    </div>
-
-                    <!-- Advantage 5 -->
-                    <div class="text-center p-6 bg-white rounded-xl shadow-lg">
-                        <p class="text-3xl text-yellow-600 mb-3 font-semibold">5.</p>
-                        <h4 class="font-bold mb-2">Trend-Driven Design</h4>
-                        <p class="text-sm text-gray-600">Constantly updating designs based on social media trends for high client appeal.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Market Opportunity Snapshot -->
-        <section class="py-16 md:py-20 bg-white">
+        <!-- 4. Market Opportunity Snapshot - Contrast section for numbers -->
+        <section class="py-20 md:py-32 bg-white border-b border-gray-100">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Market Opportunity</h2>
-                <p class="text-xl max-w-3xl mx-auto mb-10 text-gray-600">
+                <h2 class="text-5xl font-extrabold text-gray-900 mb-6">Market Opportunity & Growth</h2>
+                <p class="text-xl max-w-3xl mx-auto mb-16 text-gray-700">
                     Tap into the high-growth sector of handmade gifting in India, where consumers actively seek unique, non-generic products.
                 </p>
 
-                <div class="flex flex-wrap justify-center gap-8">
-                    <div class="p-6 bg-yellow-50 rounded-xl shadow-md w-full sm:w-64">
-                        <p class="text-5xl font-extrabold text-yellow-600">18–22%</p>
-                        <p class="text-gray-700 mt-2">Annual Growth Rate of Handmade Gifting in India</p>
+                <div class="flex flex-wrap justify-center gap-10">
+                    <div class="p-10 bg-gray-50 rounded-3xl shadow-xl w-full sm:w-64 border-l-8 border-green-600 product-card">
+                        <p class="text-6xl font-extrabold text-green-700">18–22%</p>
+                        <p class="text-gray-800 mt-2 font-semibold text-lg">Annual Growth Rate of Handmade Gifting in India</p>
                     </div>
-                    <div class="p-6 bg-yellow-50 rounded-xl shadow-md w-full sm:w-64">
-                        <p class="text-5xl font-extrabold text-yellow-600">70%</p>
-                        <p class="text-gray-700 mt-2">Maximum Average Profit Margin on Custom Products</p>
+                    <div class="p-10 bg-gray-50 rounded-3xl shadow-xl w-full sm:w-64 border-l-8 border-green-600 product-card">
+                        <p class="text-6xl font-extrabold text-green-700">70%</p>
+                        <p class="text-gray-800 mt-2 font-semibold text-lg">Maximum Average Profit Margin on Custom Products</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Custom Order Placement Form -->
-        <section id="order" class="py-16 md:py-20 bg-yellow-50">
-            <div class="container mx-auto px-6 max-w-2xl">
-                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Place Your Custom Order</h2>
-                <p class="text-lg text-center text-gray-600 mb-10">
-                    Tell us what you're dreaming of, and we'll bring it to life!
+
+        <!-- 5. Competitive Advantage (Why Us) - Distinct background for clarity -->
+        <section id="whyus" class="py-20 md:py-32 bg-gray-100 border-b border-gray-200 product-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-5xl font-extrabold text-gray-900 text-center mb-16">The Manmarziya Difference</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+
+                    <!-- Advantage 1 -->
+                    <div class="text-center p-6 product-card border-b-4 border-yellow-600 hover:shadow-xl transition duration-300">
+                        <p class="text-4xl text-yellow-700 mb-3 font-extrabold">1.</p>
+                        <h4 class="font-bold mb-2 text-gray-900 text-xl">Unique Art</h4>
+                        <p class="text-md text-gray-700">Every product is a one-of-a-kind, hand-made masterpiece.</p>
+                    </div>
+
+                    <!-- Advantage 2 -->
+                    <div class="text-center p-6 product-card border-b-4 border-yellow-600 hover:shadow-xl transition duration-300">
+                        <p class="text-4xl text-yellow-700 mb-3 font-extrabold">2.</p>
+                        <h4 class="font-bold mb-2 text-gray-900 text-xl">Deep Customization</h4>
+                        <p class="text-md text-gray-700">Extensive options for names, photos, colors, and embedded charms.</p>
+                    </div>
+
+                    <!-- Advantage 3 -->
+                    <div class="text-center p-6 product-card border-b-4 border-yellow-600 hover:shadow-xl transition duration-300">
+                        <p class="text-4xl text-yellow-700 mb-3 font-extrabold">3.</p>
+                        <h4 class="font-bold mb-2 text-gray-900 text-xl">Premium Quality</h4>
+                        <p class="text-md text-gray-700">High-grade, long-lasting, and non-yellowing materials for durability.</p>
+                    </div>
+
+                    <!-- Advantage 4 -->
+                    <div class="text-center p-6 product-card border-b-4 border-yellow-600 hover:shadow-xl transition duration-300">
+                        <p class="text-4xl text-yellow-700 mb-3 font-extrabold">4.</p>
+                        <h4 class="font-bold mb-2 text-gray-900 text-xl">Affordable Luxury</h4>
+                        <p class="text-md text-gray-700">Competitive pricing combined with fast fulfillment and delivery.</p>
+                    </div>
+
+                    <!-- Advantage 5 -->
+                    <div class="text-center p-6 product-card border-b-4 border-yellow-600 hover:shadow-xl transition duration-300">
+                        <p class="text-4xl text-yellow-700 mb-3 font-extrabold">5.</p>
+                        <h4 class="font-bold mb-2 text-gray-900 text-xl">Trend Driven</h4>
+                        <p class="text-md text-gray-700">Constantly updating designs based on social media trends for high client appeal.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. Custom Order Placement Form - Final conversion zone - Gradient background for focus -->
+        <section id="order" class="py-20 md:py-32 order-section">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-5xl font-extrabold text-gray-900 text-center mb-6">Start Your Art Commission</h2>
+                <p class="text-xl text-center text-rose-700 font-medium mb-12">
+                    Let your imagination run wild. Fill out the form, and we'll contact you to discuss the artistic details!
                 </p>
 
-                <form class="bg-white p-8 rounded-2xl shadow-2xl">
+                <form class="bg-white p-12 rounded-3xl shadow-2xl border-t-8 border-rose-500">
                     <div class="mb-6">
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-                        <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition duration-150">
+                        <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition duration-150 bg-white text-gray-900 placeholder-gray-500">
                     </div>
                     
                     <div class="mb-6">
                         <label for="contact" class="block text-sm font-medium text-gray-700 mb-2">WhatsApp Number / Email</label>
-                        <input type="text" id="contact" name="contact" required placeholder="To discuss customization details" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition duration-150">
+                        <input type="text" id="contact" name="contact" required placeholder="To discuss customization details" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition duration-150 bg-white text-gray-900 placeholder-gray-500">
                     </div>
 
                     <div class="mb-6">
                         <label for="product" class="block text-sm font-medium text-gray-700 mb-2">Product of Interest</label>
-                        <select id="product" name="product" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition duration-150 bg-white">
+                        <select id="product" name="product" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition duration-150 bg-white text-gray-900">
                             <option value="">-- Select a Product Category --</option>
                             <option value="Ring Platter">Signature Ring Platter (₹2,500)</option>
                             <option value="Photoframe">Resin Photoframe (₹499 - ₹999)</option>
@@ -262,14 +337,14 @@
                     
                     <div class="mb-8">
                         <label for="details" class="block text-sm font-medium text-gray-700 mb-2">Customization Details / Message</label>
-                        <textarea id="details" name="details" rows="4" required placeholder="e.g., 'Need a 12-inch photo frame with blue flowers and the name 'Anjali'. Date required: 15th Dec.'" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition duration-150"></textarea>
+                        <textarea id="details" name="details" rows="5" required placeholder="Describe your dream piece: colors, name, embedded elements, and desired date." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition duration-150 bg-white text-gray-900 placeholder-gray-500"></textarea>
                     </div>
                     
                     <!-- Submission Handler (Client-side message) -->
-                    <button type="submit" id="submit-button" class="w-full cta-gradient text-white font-semibold py-3 px-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] text-lg">
+                    <button type="submit" id="submit-button" class="w-full cta-gradient text-gray-900 font-extrabold py-5 px-8 rounded-xl shadow-2xl transition duration-300 transform hover:scale-[1.01] text-xl uppercase tracking-widest">
                         Send Inquiry & Discuss Design
                     </button>
-                    <p id="thank-you-message" class="text-center text-green-600 mt-4 font-medium hidden">Thank you! We have received your inquiry. We will contact you shortly on your provided WhatsApp number or Email to finalize the design.</p>
+                    <p id="thank-you-message" class="text-center text-green-700 mt-4 font-medium hidden">Thank you! We have received your inquiry. We will contact you shortly on your provided WhatsApp number or Email to finalize the design.</p>
                 </form>
             </div>
         </section>
@@ -277,27 +352,27 @@
     </main>
 
     <!-- Footer (Anchor for Contact) -->
-    <footer id="contact" class="bg-gray-900 text-white py-12">
+    <footer id="contact" class="bg-rose-900 text-white py-16">
         <div class="container mx-auto px-6 text-center">
-            <h3 class="text-2xl font-bold mb-4">Connect with Manmarziya</h3>
-            <p class="text-gray-400 max-w-xl mx-auto mb-8">
-                For general inquiries or support, find us on our channels below.
+            <h3 class="text-3xl font-bold mb-4 text-yellow-500">Connect with Manmarziya</h3>
+            <p class="text-rose-200 max-w-xl mx-auto mb-10 text-lg">
+                Let's create something beautiful together. Find us on social media for inspiration and updates.
             </p>
             
-            <div class="space-y-4 md:space-y-0 md:space-x-8 md:flex justify-center">
-                <p class="text-lg text-yellow-600">
-                    <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-6-3h-2a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2z"></path></svg>
+            <div class="space-y-6 md:space-y-0 md:space-x-12 md:flex justify-center">
+                <p class="text-xl text-yellow-500 font-extrabold flex items-center justify-center">
+                    <svg class="w-6 h-6 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-6-3h-2a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2z"></path></svg>
                     Order via Instagram/WhatsApp
                 </p>
-                <p class="text-lg text-yellow-600">
-                    <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    Doorstep Delivery Available
+                <p class="text-xl text-yellow-500 font-extrabold flex items-center justify-center">
+                    <svg class="w-6 h-6 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Pan-India Delivery Available
                 </p>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-gray-700">
-                <p class="text-sm text-gray-500">
-                    &copy; 2025 Manmarziya. Crafted with love by Sakshi, Samiksha, & Ragini.
+            <div class="mt-12 pt-8 border-t border-rose-800">
+                <p class="text-sm text-rose-300">
+                    &copy; 2025 Manmarziya | Artisan Resin & String Art. Crafted with passion by Sakshi, Samiksha, & Ragini.
                 </p>
             </div>
         </div>
@@ -312,13 +387,6 @@
             document.getElementById('submit-button').classList.add('hidden');
             document.getElementById('thank-you-message').classList.remove('hidden');
 
-            // In a real application, you would send this data to a server/email service here.
-            // console.log('Form data submitted:');
-            // console.log('Name:', document.getElementById('name').value);
-            // console.log('Contact:', document.getElementById('contact').value);
-            // console.log('Product:', document.getElementById('product').value);
-            // console.log('Details:', document.getElementById('details').value);
-            
             // Optional: Hide thank you message and show button again after a few seconds
             setTimeout(() => {
                 document.getElementById('thank-you-message').classList.add('hidden');
